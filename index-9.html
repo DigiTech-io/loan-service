@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instant Loan Service – DigiTech-io | Sitamarhi</title>
+<meta name="description" content="Home Loan, Personal Loan, Business Loan, Car Loan, Credit Card – HDFC, ICICI, SBI, Axis, Mahindra Finance. DigiTech-io Sitamarhi Bihar.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5C542;
+    --dark-gold: #C9932A;
+    --navy: #080F20;
+    --navy2: #0F2044;
+    --white: #FFFFFF;
+    --cream: #FFF9EC;
+    --green: #22C55E;
+    --muted: rgba(255,255,255,0.45);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--navy);
+    font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .card {
+    background: linear-gradient(160deg, #0F2044 0%, #080F20 70%);
+    border: 1px solid rgba(245,197,66,0.25);
+    border-radius: 22px;
+    max-width: 440px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 80px rgba(245,197,66,0.1), 0 30px 80px rgba(0,0,0,0.7);
+    animation: fadeUp 0.6s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #B8760A 0%, #F5C542 55%, #E8A820 100%);
+    padding: 22px 20px 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content:'';
+    position:absolute; inset:0;
+    background: repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.05) 12px,rgba(255,255,255,0.05) 13px);
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+  .header-icon { font-size: 2rem; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)); }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  .header h1 small {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: rgba(8,15,32,0.65);
+    margin-top: 3px;
+  }
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .trust-pill {
+    background: rgba(8,15,32,0.18);
+    border: 1px solid rgba(8,15,32,0.15);
+    color: var(--navy);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(245,197,66,0.1);
+    background: rgba(245,197,66,0.04);
+  }
+  .stat { text-align: center; }
+  .stat .num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat .lbl {
+    font-size: 0.58rem;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0.3px;
+  }
+  .stat-div { width:1px; background: rgba(255,255,255,0.08); }
+
+  /* ── TAGLINE ── */
+  .tagline {
+    text-align: center;
+    padding: 13px 20px 11px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1.65;
+    border-bottom: 1px solid rgba(245,197,66,0.1);
+  }
+  .tagline em { color: var(--white); font-style: normal; }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 20px 6px;
+  }
+
+  /* ── LOAN GRID ── */
+  .loans {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 6px 16px 14px;
+  }
+  .loan-card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(245,197,66,0.12);
+    border-radius: 13px;
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    text-decoration: none;
+  }
+  .loan-card:hover, .loan-card:active {
+    background: rgba(245,197,66,0.1);
+    border-color: rgba(245,197,66,0.4);
+    transform: translateY(-2px);
+  }
+  .loan-card .emoji { font-size: 1.4rem; flex-shrink:0; }
+  .loan-card .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.2;
+  }
+  .loan-card .label small {
+    display: block;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: rgba(255,255,255,0.38);
+    font-size: 0.62rem;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+  .loan-card.full { grid-column: 1/-1; justify-content: center; gap: 12px; }
+  .wa-hint {
+    font-size: 0.58rem;
+    color: #25D366;
+    font-weight: 600;
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* ── BANKS ── */
+  .banks {
+    margin: 0 16px 14px;
+    background: rgba(245,197,66,0.05);
+    border: 1px solid rgba(245,197,66,0.15);
+    border-radius: 12px;
+    padding: 11px 14px;
+    text-align: center;
+  }
+  .bank-title {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .bank-logos { display:flex; flex-wrap:wrap; justify-content:center; gap:5px; }
+  .bank-chip {
+    background: rgba(255,255,255,0.06);
+    color: var(--cream);
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* ── FEATURES ── */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    padding: 0 16px 16px;
+  }
+  .feat {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.73rem;
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .feat .tick {
+    width: 18px; height: 18px;
+    background: linear-gradient(135deg, var(--green), #16a34a);
+    border-radius: 50%;
+    display: flex; align-items:center; justify-content:center;
+    font-size: 0.6rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(34,197,94,0.35);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    margin: 0 16px 16px;
+    background: linear-gradient(90deg,transparent,rgba(245,197,66,0.3),transparent);
+  }
+
+  /* ── CTA ── */
+  .cta-section { padding: 0 16px 20px; display:flex; flex-direction:column; gap:10px; }
+  .cta-label {
+    text-align: center;
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(245,197,66,0.55);
+    font-weight: 700;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 18px;
+    border-radius: 13px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-apply {
+    background: linear-gradient(135deg, #B8760A 0%, #F5C542 100%);
+    color: var(--navy);
+    box-shadow: 0 4px 20px rgba(245,197,66,0.35);
+    animation: pulse-gold 2.5s ease infinite;
+  }
+  @keyframes pulse-gold {
+    0%,100% { box-shadow: 0 4px 20px rgba(245,197,66,0.35); }
+    50%      { box-shadow: 0 4px 35px rgba(245,197,66,0.65); }
+  }
+  .btn-apply .btn-main { font-family:'Playfair Display',serif; font-size:1rem; }
+  .btn-apply .btn-sub { font-size:0.6rem; font-weight:500; opacity:0.7; margin-top:1px; display:block; }
+
+  .btn-wa {
+    background: linear-gradient(135deg, #075E54, #128C7E);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(18,140,126,0.3);
+  }
+  .btn-wa .wa-icon { font-size:1.2rem; }
+  .btn-wa .wa-text .wa-main { font-size:0.88rem; display:block; }
+  .btn-wa .wa-text .wa-sub { font-size:0.6rem; opacity:0.75; display:block; margin-top:1px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: rgba(0,0,0,0.35);
+    text-align: center;
+    padding: 11px 16px;
+    border-top: 1px solid rgba(245,197,66,0.07);
+  }
+  .footer .f1 { font-size:0.68rem; color: rgba(245,197,66,0.5); font-weight:600; letter-spacing:1px; }
+  .footer .f2 { font-size:0.58rem; color: rgba(255,255,255,0.2); margin-top:3px; letter-spacing:0.5px; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <span class="header-icon">🏦</span>
+      <h1>Instant Loan<small>DigiTech-io Service</small></h1>
+    </div>
+    <div class="trust-row">
+      <span class="trust-pill">⚡ Fast Approval</span>
+      <span class="trust-pill">🔒 100% Safe</span>
+      <span class="trust-pill">✅ Free Consultation</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="num">500+</div><div class="lbl">Loans Processed</div></div>
+    <div class="stat-div"></div>
+    <div class="stat"><div class="num">10+</div><div class="lbl">Partner Banks</div></div>
+    <div class="stat-div"></div>
+    <div class="stat"><div class="num">24hr</div><div class="lbl">Quick Response</div></div>
+  </div>
+
+  <!-- TAGLINE -->
+  <p class="tagline">
+    ✨ अब पाएं <em>हर तरह का Loan</em> — आसान Process,<br>
+    कम Documents, <em>तेज़ Approval</em> के साथ ✨
+  </p>
+
+  <!-- LOAN TYPES -->
+  <p class="sec-title">Loan चुनें — WhatsApp पर सीधे बात करें</p>
+  <div class="loans">
+
+    <a class="loan-card" href="https://wa.me/918210073056?text=%F0%9F%8F%A0%20*Home%20Loan%20Enquiry*%0A%0ANamaste!%20Mujhe%20Home%20Loan%20ke%20baare%20mein%20jaankari%20chahiye.%0A%0AKripya%20mujhse%20contact%20karein.%0A%0A%E2%80%94%20DigiTech-io%20Website%20se" target="_blank">
+      <span class="emoji">🏠</span>
+      <div class="label">Home Loan
+        <small>घर का सपना पूरा करें</small>
+        <span class="wa-hint">💬 WhatsApp करें</span>
+      </div>
+    </a>
+
+    <a class="loan-card" href="https://wa.me/918210073056?text=%F0%9F%92%BC%20*Business%20Loan%20Enquiry*%0A%0ANamaste!%20Mujhe%20Business%20Loan%20ke%20baare%20mein%20jaankari%20chahiye.%0A%0AKripya%20mujhse%20contact%20karein.%0A%0A%E2%80%94%20DigiTech-io%20Website%20se" target="_blank">
+      <span class="emoji">💼</span>
+      <div class="label">Business Loan
+        <small>बिज़नेस को बढ़ाएं</small>
+        <span class="wa-hint">💬 WhatsApp करें</span>
+      </div>
+    </a>
+
+    <a class="loan-card" href="https://wa.me/918210073056?text=%F0%9F%92%B3%20*Credit%20Card%20Enquiry*%0A%0ANamaste!%20Mujhe%20Credit%20Card%20ke%20baare%20mein%20jaankari%20chahiye.%0A%0AKripya%20mujhse%20contact%20karein.%0A%0A%E2%80%94%20DigiTech-io%20Website%20se" target="_blank">
+      <span class="emoji">💳</span>
+      <div class="label">Credit Card
+        <small>इंस्टेंट लिमिट पाएं</small>
+        <span class="wa-hint">💬 WhatsApp करें</span>
+      </div>
+    </a>
+
+    <a class="loan-card" href="https://wa.me/918210073056?text=%F0%9F%9A%97%20*Car%20Loan%20Enquiry*%0A%0ANamaste!%20Mujhe%20Car%20Loan%20ke%20baare%20mein%20jaankari%20chahiye.%0A%0AKripya%20mujhse%20contact%20karein.%0A%0A%E2%80%94%20DigiTech-io%20Website%20se" target="_blank">
+      <span class="emoji">🚗</span>
+      <div class="label">Car Loan
+        <small>ड्रीम कार लाएं</small>
+        <span class="wa-hint">💬 WhatsApp करें</span>
+      </div>
+    </a>
+
+    <a class="loan-card full" href="https://wa.me/918210073056?text=%F0%9F%92%B0%20*Personal%20Loan%20Enquiry*%0A%0ANamaste!%20Mujhe%20Personal%20Loan%20ke%20baare%20mein%20jaankari%20chahiye.%0A%0AKripya%20mujhse%20contact%20karein.%0A%0A%E2%80%94%20DigiTech-io%20Website%20se" target="_blank">
+      <span class="emoji">💰</span>
+      <div class="label">Personal Loan
+        <small>किसी भी ज़रूरत के लिए — तुरंत</small>
+        <span class="wa-hint">💬 Tap करें — WhatsApp message auto-fill होगा</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BANKS -->
+  <div class="banks">
+    <div class="bank-title">🏛 हमारे Partner Banks</div>
+    <div class="bank-logos">
+      <span class="bank-chip">HDFC Bank</span>
+      <span class="bank-chip">ICICI Bank</span>
+      <span class="bank-chip">Axis Bank</span>
+      <span class="bank-chip">SBI</span>
+      <span class="bank-chip">Mahindra Finance</span>
+      <span class="bank-chip">+ और भी</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="feat"><span class="tick">✓</span>कम ब्याज दर</div>
+    <div class="feat"><span class="tick">✓</span>Online Process</div>
+    <div class="feat"><span class="tick">✓</span>तेज़ Approval</div>
+    <div class="feat"><span class="tick">✓</span>कम Documents</div>
+    <div class="feat"><span class="tick">✓</span>Free Guidance</div>
+    <div class="feat"><span class="tick">✓</span>सभी Banks</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <p class="cta-label">अभी Apply करें — बिल्कुल Free</p>
+
+    <a href="https://forms.gle/MC9GCMVPyX1owLFp7" target="_blank" class="btn btn-apply">
+      <span>📋</span>
+      <span>
+        <span class="btn-main">Apply Now — Free!</span>
+        <span class="btn-sub">Online Form भरें · सिर्फ 2 मिनट में</span>
+      </span>
+    </a>
+
+    <a href="https://wa.me/918210073056?text=Namaste!%20Mujhe%20Loan%20ke%20baare%20mein%20jaankari%20chahiye.%20Kripya%20help%20karein." target="_blank" class="btn btn-wa">
+      <span class="wa-icon">💬</span>
+      <span class="wa-text">
+        <span class="wa-main">WhatsApp पर बात करें</span>
+        <span class="wa-sub">तुरंत reply · 24/7 Available</span>
+      </span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="f1">🏢 DigiTech-io &nbsp;|&nbsp; Sitamarhi, Bihar</div>
+    <div class="f2">Trusted Digital Services · Loan Facilitation Partner</div>
+  </div>
+
+</div>
+</body>
+</html>
